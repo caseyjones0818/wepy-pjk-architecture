@@ -1,0 +1,95 @@
+<style lang="less">
+@import './styles/fc';
+@import '../node_modules/kai-ui/src/less/index';
+@import './styles/base';
+@import './styles/icon';
+@import './styles/style';
+</style>
+
+<script>
+import wepy from 'wepy';
+import 'wepy-async-function';
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'page/tabBar/home',
+      'page/tabBar/message',
+      'page/tabBar/mine'
+    ],
+    permission: {
+      'scope.userLocation': {
+        desc: '你的位置信息将用于小程序位置接口的效果展示'
+      }
+    },
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: 'white',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+      // navigationStyle: 'custom'
+    },
+    tabBar: {
+      selectedColor: '#7452D3',
+      list: [
+        {
+          pagePath: 'page/tabBar/home',
+          text: '首页',
+          iconPath: 'images/tab_home@2x.png',
+          selectedIconPath: 'images/tab_home_selected@2x.png'
+        },
+        {
+          pagePath: 'page/tabBar/message',
+          text: '消息',
+          iconPath: 'images/tab_message@2x.png',
+          selectedIconPath: 'images/tab_message_selected@2x.png'
+        },
+        {
+          pagePath: 'page/tabBar/mine',
+          text: '我的',
+          iconPath: 'images/tab_me@2x.png',
+          selectedIconPath: 'images/tab_me_selected@2x.png'
+        }
+      ]
+    },
+    subPackages: [
+      {
+        root: 'page/home/',
+        pages: [
+          
+        ]
+      },
+      {
+        root: 'page/message/',
+        pages: [
+          
+        ]
+      },
+      {
+        root: 'page/mine/',
+        pages: [
+          
+        ]
+      }
+    ]
+  };
+
+  globalData = {};
+
+  constructor() {
+    super();
+    this.use('requestfix');
+    this.use('promisify');
+  }
+
+  async onLaunch(option) {
+    wepy.switchTab({
+      url: '/pages/home'
+    });
+  }
+  async onLoad() {}
+
+ 
+   
+}
+</script>

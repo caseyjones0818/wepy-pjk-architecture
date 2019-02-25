@@ -1,0 +1,164 @@
+<!-- 消息 -->
+<template>
+  <view class="message">
+      <!-- 头部搜索组件 -->
+      <view class="header">
+         <view class="search">
+            <image class="search-icon" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/message/Group.png" /> 
+         </view>
+         <view @tap="goSocialNetwork">
+            <image class="moremessage" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/message/nav_moremessage%402x.png" />
+         </view>
+      </view>
+      <!-- 消息列表组件 -->
+      <view class="content">
+         <view class="message-list">
+            <view class="head-portrait">
+                <image src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/message/list_hudong%402x.png" />
+            </view>
+            <view class="list-content">
+                <view class="name">互动通知</view>
+                <view class="message">小明关注了你，快去跟他聊天吧</view>
+            </view>
+         </view>
+         <view class="message-list">
+            <view class="head-portrait">
+                <image src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/message/list_order%402x.png" />
+            </view>
+            <view class="list-content" @tap="upUser">
+                <view class="message-tl">
+                   <view class="name">订单详情</view><view class="message-time">10:00</view>
+                </view>
+                <view class="message">你的订单已经审核通过，请按时参加</view>
+            </view>
+         </view>
+      </view>
+
+     
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import api from '@/api/api'
+import tip from '@/utils/tip'
+import SDK from '@/api/NIM_Web_SDK_weixin_v5.9.1.js'
+export default class Message extends wepy.page {
+  config = {
+    navigationBarTitleText: '消息'
+  }
+  components = {
+   
+  }
+  data = {
+  }
+
+  computed = {}
+
+  methods = {
+    goSocialNetwork() {
+      wepy.navigateTo({
+         url: `../../page/message/pages/socialNetwork` 
+      })
+    },
+
+
+  }
+  async onLoad (options){
+    
+  }
+  
+  
+  
+
+  
+}
+</script>
+<style lang="less">
+.message {
+    background: white;
+   .header {
+      width: 100%;
+      height: 88rpx;
+      background: white;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;  /* 固定位置 */
+      top: 0;
+      white-space: nowrap; /* white-space 属性设置如何处理元素内的空白 */
+      .search {
+         width: 610rpx;
+         height: 64rpx;
+         background:rgba(243,243,243,1);
+         border-radius:32rpx;
+         margin-left: 32rpx;
+        .search-icon {
+           width: 32rpx;
+           height: 32rpx;
+           margin:20rpx 30rpx;
+        }
+      }
+      .moremessage {
+         width: 48rpx;
+         height: 48rpx;
+         margin-right: 30rpx;
+      }
+   }
+   .content {
+      margin-top: 88rpx;
+      width: 100%;
+     .message-list {
+        display: flex;
+        height: 144rpx;
+        align-items: center;
+       .head-portrait {
+          padding: 0 20rpx 0 32rpx; 
+          image {
+           width: 108rpx; 
+           height: 108rpx;
+          }
+       }
+       .list-content {
+          padding:30rpx 0;
+          border-bottom:2rpx #f3f3f3 solid;
+          margin-right: 32rpx;
+          width: 100%;
+          .message-tl {
+              display: flex;
+              justify-content:space-between;
+              align-items:center;
+             .name {
+                height:44rpx;
+                font-size:32rpx;
+                font-family:PingFangSC-Regular;
+                font-weight:400;
+                color:rgba(51,51,51,1);
+                line-height:44rpx; 
+            }
+            .message-time {
+                height:34rpx;
+                font-size:24rpx;
+                font-family:PingFangSC-Regular;
+                font-weight:400;
+                color:rgba(172,171,171,1);
+                line-height:34rpx;
+            }
+          }
+        
+         .message {
+            height:40rpx;
+            font-size:28rpx;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(172,171,171,1);
+            line-height:40rpx; 
+         }
+       }
+       
+     }
+   }
+  
+   
+}
+
+</style>

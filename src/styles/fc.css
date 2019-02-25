@@ -1,0 +1,223 @@
+.fc-title-list {
+  height: 76rpx;
+  background: #f6f6f6;
+  font-size: 28rpx;
+  padding: 0 26rpx;
+  line-height: 76rpx;
+}
+.fc-list {
+  background: white;
+  padding: 0 26rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 94rpx;
+  border: 1rpx solid #cbcbcb;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+.noline {
+  border-bottom: none;
+}
+.bold {
+  font-weight: bold;
+}
+.fc-color {
+  color: #5F4A8B;
+}
+.fc-bk-bg {
+  color: #000;
+}
+.fc-list-padding {
+  padding: 0 26rpx;
+}
+.white-bg {
+  background: white;
+}
+.fc-fixed-bottom {
+  position: fixed;
+  bottom: 0rpx;
+  bottom: 0;
+  width: 100%;
+}
+.fc-boder-top-line {
+  border: 1rpx solid #cbcbcb;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+.fc-fs28 {
+  font-size: 28rpx;
+}
+.fc-colrbk {
+  color: #000;
+}
+.fc-row {
+  display: flex;
+}
+.fc-space-between {
+  justify-content: space-between;
+}
+.interval20 {
+  padding-bottom: 20rpx;
+}
+.fc-center {
+  text-align: center;
+}
+.fc-align-items {
+  align-items: center;
+}
+.fc-tag {
+  height: 40rpx;
+  background: #f3f3f3;
+  border-radius: 32rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  margin-right: 20rpx;
+}
+.tag-sex {
+  width: 72rpx;
+  height: 28rpx;
+  border-radius: 38rpx;
+  background: #54acff;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rpx;
+}
+.tag-sex .sex-icon {
+  width: 20rpx;
+  height: 20rpx;
+  padding-right: 6rpx;
+}
+.tag-sex .num {
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28rpx;
+}
+.qundengji {
+  height: 28rpx;
+  background: #7452d3;
+  border-radius: 16rpx;
+  margin: 7rpx 10rpx 0 10rpx;
+  padding: 0 15rpx;
+  align-items: center;
+}
+.qundengji image {
+  width: 21rpx;
+  height: 21rpx;
+}
+.qundengji .num {
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28rpx;
+  padding-left: 4rpx;
+}
+.fc-cell-md {
+  height: 112rpx;
+  background: #ffffff;
+}
+.fc-cell-md .cell-margin {
+  margin: 0 32rpx;
+  height: 109rpx;
+  border-bottom: 2rpx #f3f3f3 solid;
+  display: flex;
+  align-items: center;
+}
+.fc-cell-md .cell-margin .cell-tl {
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  line-height: 44rpx;
+}
+.fc-cell-md .cell-margin .cell-val {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #acabab;
+  line-height: 40rpx;
+}
+.fc-cell-md .cell-margin .arrow {
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 20rpx;
+}
+.fc-red-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #FF5151;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}
+.fc-gray-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #F3F3F3;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  line-height: 88rpx;
+}
+.save-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #ACABAB;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  line-height: 88rpx;
+}
+.fc-input-list {
+  margin: 0 32rpx;
+}
+.fc-input-list .list-content {
+  border-bottom: 2rpx #ACABAB solid;
+  height: 96rpx;
+  align-items: center;
+}
+.fc-input-list .list-content .title {
+  width: 96rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+  line-height: 44prx;
+  margin-right: 20rpx;
+}
+.fc-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #7452D3;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}

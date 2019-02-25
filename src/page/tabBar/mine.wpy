@@ -1,0 +1,234 @@
+<!-- 我的 -->
+<template>
+   <view class="mine">
+     <view class="mine-bj">
+        <image class="setting" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/setting%403x.png" />
+        <image class="user-header" src="{{userInfo.userImage}}" />
+        <view class="user-name">{{userInfo.nickName}}</view>
+        <!-- 用户钱包信息模块 -->
+        <view class="account-info-bj">
+           <view class="account-info">
+              <view class="layout layout-list vetically">
+              <view class="col col-8 cutrule">{{userInfo.account}}<view>账户余额</view></view>
+              <view class="col col-8 cutrule">5<view>优惠券</view></view>
+              <view class="col col-8">20<view>积分</view></view>
+            </view>
+           </view>
+        </view>
+        <!-- 用户账户价值信息功能区 -->
+        <view class="worth-info">
+          <view class="layout layout-list">
+            <view class="col col-4 cutrule"><image class="worth-icon" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E5%BE%85%E4%BB%98%E6%AC%BE%403x.png" /><view>待付款</view></view>
+            <view class="col col-4 cutrule"><image class="worth-icon" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E9%AD%85%E5%8A%9B%403x.png" /><view>魅力值</view></view>
+            <view class="col col-4 cutrule"><image class="worth-icon" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E5%9C%9F%E8%B1%AA%403x.png" /><view>土豪值</view></view>
+            <view class="col col-4 cutrule"><image class="worth-icon" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E6%B4%BB%E8%B7%83%403x.png" /><view>活跃度</view></view>
+            <view class="col col-4 cutrule"><image class="worth-icon" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E7%B2%89%E4%B8%9D%403x.png" /><view>粉丝数</view></view>
+          </view>
+        </view>
+     </view>
+     <view></view>
+     <view class="info_block">
+      <navigator class="item" url="../../page/mine/pages/order">
+        <view class="item_content">
+          <image class="item_img" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E8%AE%A2%E5%8D%95(2)%403x.png"></image>
+          <view class="text">我的订单</view>
+        </view>
+        <view class="arrow"></view>
+      </navigator>
+      <navigator class="item" url="/pages/reorder">
+        <view class="item_content">
+          <image class="item_img" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E4%BC%9A%E5%91%98%403x.png  "></image>
+          <view class="text">会员中心</view>
+        </view>
+        <view class="arrow"></view>
+      </navigator>
+      <navigator class="item" url="/pages/points">
+        <view class="item_content">
+          <image class="item_img" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/%E5%8F%8D%E9%A6%88%403x.png  "></image>
+          <view class="text">客服反馈</view>
+        </view>
+        <view class="arrow"></view>
+      </navigator>
+      <navigator class="item" url="/pages/collection?type=0">
+        <view class="item_content">
+          <image class="item_img" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/BBD%E6%94%B6%E8%97%8F1%403x.png  "></image>
+          <view class="text">我的收藏</view>
+        </view>
+        <view class="arrow"></view>
+      </navigator>
+    </view>
+    <view class="info_block" style="margin-top:20rpx;">
+      <navigator class="item" url="/pages/order">
+        <view class="item_content">
+          <image class="item_img" src="https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/qianbao%403x.png  "></image>
+          <view class="text">充值</view>
+        </view>
+        <view class="arrow"></view>
+      </navigator>
+    </view> 
+   </view>
+</template>
+<script>
+import wepy from 'wepy'
+import api from '@/api/api'
+import tip from '@/utils/tip'
+
+export default class Mine extends wepy.page {
+  config = {
+    navigationBarTitleText: '我'
+  }
+  components = {
+   
+    
+  }
+  data = {
+    userInfo: '',
+    arrow: true,
+    
+   
+  }
+  async onShow(options) {
+   let LOGIN_DATA = wepy.getStorageSync('LOGIN_DATA')
+   console.log(LOGIN_DATA)
+   this.userInfo = LOGIN_DATA
+   if(LOGIN_DATA == '') {
+      wepy.navigateTo({
+        url: 'login'
+      })  
+   }
+  }
+  async onGotUserInfo(e) {
+    console.log(e)
+  }
+
+
+  
+  methods = {
+    
+   
+  }
+  
+  
+}
+</script>
+<style lang="less">
+template {
+  background: #f5f5f5;
+}
+.mine {
+  padding-bottom: 30%;
+  .mine-bj {
+    width:100%;
+    text-align:center;
+    background: white;
+    .setting {
+      width:54rpx;
+      height:53rpx;
+      position:absolute;
+      right:1rpx;
+      margin:30rpx 50rpx;
+    }
+    .user-header {
+      width:143rpx;
+      height:143rpx;
+      border-radius: 50%;
+      border:6rpx solid white;
+      margin-top:25rpx;
+    }
+    .user-name {
+      color: black;
+    }
+    .account-info-bj {
+      width:749rpx;
+      height:210rpx;
+      margin-top:60rpx;
+      background-size:100% 100%;
+      background-image: url("https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/mine_accountinfo_bj.png");
+      position:relative;
+     .account-info {
+        width:705rpx;
+        height:160rpx;
+        position:absolute;
+        top:26rpx;
+        right:20rpx;
+        .vetically {
+          // 用户账户信息栏垂直居中
+          height:160rpx;
+          display:flex;
+          align-items:center;
+        }
+        .layout .col-8 {
+          width:33.33333333%;
+          color:white;
+          font-size: 38rpx;
+          view {
+            color: black;
+            font-size: 28rpx;
+          }
+        }
+        .cutrule {
+          border:1rpx solid white;
+          border-left:none;
+          border-bottom:none;
+          border-top:none;
+        }
+      }
+    }
+    .worth-info {
+      padding-bottom: 48rpx;
+      padding-top:20rpx;
+      .layout .col-4 {
+        width: 20%;
+        image {
+          width: 50rpx;
+          height: 50rpx;
+        }
+        view {
+          color: #ABABAB;
+        }
+      }
+    }
+
+  }
+  .info_block {
+  .item {
+    border-top: 1rpx solid #dbdbdb;
+    background: #fff;
+    padding: 34rpx 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .item:last-child {
+    border-bottom: 1rpx solid #dbdbdb;
+  }
+  .item_content {
+    display: flex;
+    align-items: center;
+    .text {
+      margin-left: 20rpx;
+      color: #1a1a1a;
+    }
+  }
+  .item_img {
+    width: 42rpx;
+    height: 42rpx;
+  }
+  .arrow {
+    width:15rpx;
+    height:28rpx;
+    text-align:center;
+    background-size:100% 100%;
+    background-image: url("	https://fuchen-1258269730.cos.ap-shanghai.myqcloud.com/app/wxapp/arrow.png");
+  }
+  .tip {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    margin-left: 60rpx;
+  }
+}
+
+}
+
+</style>
